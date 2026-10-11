@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/panaderia}
+    username: ${DATABASE_USER:panaderia}
+    password: ${DATABASE_PASSWORD:panaderia}
+  jpa:
+    open-in-view: false
+    hibernate:
+      # "update" crea las tablas solo. Cómodo para empezar;
+      # cuando el modelo se estabilice, pasa a Flyway y pon "validate".
+      ddl-auto: update
+
+server:
+  port: ${PORT:8080}

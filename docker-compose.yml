@@ -1,0 +1,15 @@
+# Solo la base de datos. El backend y el frontend los corres desde tu IDE / terminal.
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: panaderia
+      POSTGRES_USER: panaderia
+      POSTGRES_PASSWORD: panaderia
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
